@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>AngularJS - vis.js Graph</title>
+  </head>
+  <body>
+    <div ng-app="app.visgraph" ng-controller="AppCtrl">
+	  <h1>AngularJS - vis.js Graph</h1>
+	  <div ng-switch on="graph.error">
+	  	<div ng-switch-when="0">
+	  	  <div id="graph" vis-graph data="graph.data" options="graph.options" event="select" callback="callbackFunction(params)" style="width: 100%; height: 600px"></div>
+	  	</div>
+		<div ng-switch-default></div>
+	  </div>
+    </div>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script src="//visjs.org/dist/vis.js"></script>
+	<script src="../angular.visgraph-0.0.1.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
