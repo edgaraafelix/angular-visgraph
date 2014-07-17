@@ -12,7 +12,7 @@ angular.module('angular.visgraph', []).directive('visGraph', [function() {
     link: function(scope, element, attrs) {        
  	  var container = element[0], buildGraph = function(scope) {
         var graph = null;
-        graph = new vis.Graph(container, scope.data, scope.options);
+        graph = new vis.Network(container, scope.data, scope.options);
           return graph.on(scope.event, function(properties) {
             if (properties.nodes.length !== 0) { 
               scope.callback({params: properties});
